@@ -8,34 +8,20 @@ let objectScale = 8;
 const scene = new THREE.Scene()
 // scene.add(new THREE.AxesHelper(5))
 
-const light = new THREE.SpotLight()
-light.position.set(0, 0, 0)
-scene.add(light)
+// const light = new THREE.SpotLight({color:0xffffff, intensity: 1000, distance: 220, angle: 120})
+// light.position.set(80, 80, 80)
+// scene.add(light)
 
-// const light2 = new THREE.SpotLight()
-// light2.position.set(120, 120, 120)
-// scene.add(light2)
-
-// const camera = new THREE.PerspectiveCamera(
-//     75,
-//     window.innerWidth  / window.innerHeight,
-//     0.1,
-//     10
-// )
 let viewsize = 1200;
-// let aspectratio = window.innerWidth / window.innerHeight;
 let aspectratio = 1
 const camortho = new THREE.OrthographicCamera(
     -aspectratio*viewsize / 2, aspectratio*viewsize / 2, 
-    viewsize /2, -viewsize/2, -1000, 1000
+    viewsize /2, -viewsize/2, -500, 500
 )
-// camera.position.z = 30 /0.0002
-// camera.position.x = 10 /0.0002
-// camera.position.y = 20 /0.0002
 
-camortho.position.z = 80
-camortho.position.x = 80
-camortho.position.y = 80
+camortho.position.z = 90
+camortho.position.x = 90
+camortho.position.y = 90
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "low-power"})
 // renderer.setSize(window.innerWidth/screenRatio, window.innerHeight/screenRatio)
@@ -49,7 +35,7 @@ container.appendChild(renderer.domElement)
 
 // const controls = new OrbitControls(camera, renderer.domElement)
 const controls = new OrbitControls(camortho, renderer.domElement)
-controls.enableDamping = false
+controls.enableDamping = true
 controls.enableRotate = false
 
 const material = new THREE.MeshPhysicalMaterial({
@@ -155,8 +141,14 @@ function scaleobject2(geometry, material) {
 }
 
 loader.load(
-    'models/tinkercad-vectary/stator.stl',
+    'models/tinkercad-vectary/windings.stl',
     ((geometry) => scaleobject(geometry, stator))
+    // ((geometry) => scaleobject2(geometry))
+)
+
+loader.load(
+    'models/tinkercad-vectary/stator-core.stl',
+    ((geometry) => scaleobject(geometry, material))
     // ((geometry) => scaleobject2(geometry))
 )
 
