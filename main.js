@@ -53,7 +53,7 @@ const material = new THREE.MeshPhysicalMaterial({
 
 const COLOR = {
     g: 0xeeeeee,
-    na: 0xF2A86B,
+    na: 0xff8000,
     c: 0xFF6666,
 }
 
