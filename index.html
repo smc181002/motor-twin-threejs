@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <style>
+    /* canvas {
+      border-radius: 10px;
+    }
+
+    div#app {
+      border: 1px solid #bbb;
+      border-radius: 10px;
+    } */
+
+    .form-selection {
+      margin: 0 10px;
+    }
+
+    div.form-selection > div{
+      flex-direction: column;
+    }
+
+    div.label-options {
+      display: flex;
+      flex-direction: column;
+    }
+
+  </style>
+  <body style="background: white; min-height: 100vh; display: flex; justify-content: center; align-items: center;">
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
+    <form class="form-selection">
+      <div>
+        <span>Stator</span>
+        <div class="label-options">
+          <label for="s-g">
+            <input type="radio" name="stator-color" value="g" id="s-g" checked>
+            Good
+          </label>
+          <label for="s-na">
+            <input type="radio" name="stator-color" value="na" id="s-na">
+            Need Attention
+          </label>
+          <label for="s-c">
+            <input type="radio" name="stator-color" value="c" id="s-c">
+            Critical
+          </label>
+        </div>
+      </div>
+      <div>
+        <span>Rotor</span>
+        <div class="label-options">
+          <label for="r-g">
+            <input type="radio" name="rotor-color" value="g" id="r-g" checked>
+            Good
+          </label>
+          <label for="r-na">
+            <input type="radio" name="rotor-color" value="na" id="r-na">
+            Need Attention
+          </label>
+          <label for="r-c">
+            <input type="radio" name="rotor-color" value="c" id="r-c">
+            Critical
+          </label>
+        </div>
+      </div>
+      <div>
+        <span>Bearing DE</span>
+        <div class="label-options">
+          <label for="bde-g">
+            <input type="radio" name="bde-color" value="g" id="bde-g" checked>
+            Good
+          </label>
+          <label for="bde-na">
+            <input type="radio" name="bde-color" value="na" id="bde-na">
+            Need Attention
+          </label>
+          <label for="bde-c">
+            <input type="radio" name="bde-color" value="c" id="bde-c">
+            Critical
+          </label>
+        </div>
+      </div>
+      <div>
+        <span>Bearing NDE</span>
+        <div class="label-options">
+          <label for="bnde-g">
+            <input type="radio" name="bnde-color" value="g" id="bnde-g" checked>
+            Good
+          </label>
+          <label for="bde-na">
+            <input type="radio" name="bnde-color" value="na" id="bnde-na">
+            Need Attention
+          </label>
+          <label for="bnde-c">
+            <input type="radio" name="bnde-color" value="c" id="bnde-c">
+            Critical
+          </label>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
